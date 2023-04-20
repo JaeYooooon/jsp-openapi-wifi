@@ -62,3 +62,8 @@ bin/
 *.zip
 *.tar.gz
 *.rar
+
+identifier.sqlite
+gradlew.bat
+gradlew
+settings.gradle
