@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/66639e4a-5abf-4947-9a35-ff4ef70059fc/console.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/service/WifiService.java" dialect="GenericSQL" />
+  </component>
+</project>
