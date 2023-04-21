@@ -22,7 +22,7 @@ public class BookmarkService {
 
             connection = DriverManager.getConnection(url, userName, password);
             String sql = "insert into BookmarkGroup(NAME, ORDERNO, CREATETIME) " +
-                    "values (?, ?, ?); ";
+                         "values (?, ?, ?); ";
 
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, bookmarkGroupDTO.getNAME());
@@ -71,7 +71,6 @@ public class BookmarkService {
                         .build();
                 bookmarkGroupDTOS.add(bookmarkGroupDTO);
             }
-
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
@@ -83,14 +82,11 @@ public class BookmarkService {
                 e.printStackTrace();
             }
         }
-
         return bookmarkGroupDTOS;
     }
 
     public List<BookmarkGroupDTO> showBookmarkGroup(int id) {
-
         ArrayList<BookmarkGroupDTO> bookmarkGroupDTOS = new ArrayList<>();
-
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -115,7 +111,6 @@ public class BookmarkService {
                         .build();
                 bookmarkGroupDTOS.add(bookmarkGroupDTO);
             }
-
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
@@ -127,7 +122,6 @@ public class BookmarkService {
                 e.printStackTrace();
             }
         }
-
         return bookmarkGroupDTOS;
     }
 
@@ -160,7 +154,6 @@ public class BookmarkService {
                 e.printStackTrace();
             }
         }
-
     }
 
     public void deleteBookmarkGroup(int id) {
@@ -221,8 +214,8 @@ public class BookmarkService {
             connection = DriverManager.getConnection(url, userName, password);
 
             String sql = "SELECT BookmarkList.*, BookmarkGroup.NAME\n" +
-                    "FROM BookmarkList\n" +
-                    "         JOIN BookmarkGroup ON BookmarkList.BOOKMARKGROUPID = BookmarkGroup.ID";
+                         "FROM BookmarkList\n" +
+                         "JOIN BookmarkGroup ON BookmarkList.BOOKMARKGROUPID = BookmarkGroup.ID";
 
             preparedStatement = connection.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
@@ -289,7 +282,6 @@ public class BookmarkService {
         PreparedStatement preparedStatement = null;
         Connection connection = null;
         ResultSet resultSet = null;
-        List<BookmarkGroupDTO> bookmarkGroupDTOS = new ArrayList<>();
         try {
             String url = "jdbc:mysql://localhost:3306/wifi";
             String userName = "root";
@@ -377,6 +369,5 @@ public class BookmarkService {
                 throw new RuntimeException(e);
             }
         }
-
     }
 }

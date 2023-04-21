@@ -23,7 +23,6 @@
 %>
 <button onclick="location.href='bookmarkGroupAdd.jsp'">북마크 그룹 이름 추가</button>
 <table class="table table-striped table-bordered" >
-
     <thead>
         <tr>
             <th>ID</th>
@@ -34,7 +33,18 @@
             <th>비고</th>
         </tr>
     </thead>
-    <% for (BookmarkGroupDTO bookmarkGroupDTO : bookmarkGroupDTOList) { %>
+    <%
+        if (bookmarkGroupDTOList.isEmpty()) {
+    %>
+    <tbody>
+    <tr>
+        <td colspan="6">정보가 존재하지 않습니다.</td>
+    </tr>
+    </tbody>
+    <%
+    } else {
+        for (BookmarkGroupDTO bookmarkGroupDTO : bookmarkGroupDTOList) {
+    %>
     <tbody>
         <tr>
             <td><%=bookmarkGroupDTO.getID()%></td>
@@ -52,7 +62,7 @@
             </td>
         </tr>
     </tbody>
-    <% }%>
+    <% }}%>
 </table>
 </body>
 </html>

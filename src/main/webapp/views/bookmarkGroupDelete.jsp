@@ -12,6 +12,5 @@
     bookMarkService.deleteBookmarkGroup(Integer.parseInt(id));
     response.sendRedirect("bookmarkGroup.jsp");
 %>
-
 </body>
 </html>

@@ -21,9 +21,9 @@
     Double lnt = Double.parseDouble(request.getParameter("lnt"));
     HitoryDTO hitoryDTO = new HitoryDTO();
         hitoryDTO = hitoryDTO.builder()
+                .CREATED_TIME(new Timestamp(System.currentTimeMillis()))
                 .LAT(lat)
                 .LNT(lnt)
-                .CREATED_TIME(new Timestamp(System.currentTimeMillis()))
                 .build();
         WifiService service = new WifiService();
         service.saveHistory(hitoryDTO);
@@ -39,7 +39,7 @@
 </div>
 <br>
 <table class="table table-striped table-bordered">
-    <thead style="background: #04AA6D;">
+    <thead>
         <tr style="font-size: 13px;">
             <th>거리(km)</th>
             <th>관리번호</th>
@@ -103,5 +103,6 @@
         text-align: center;
         align-content: center;
         color: white;
+        background-color: #04AA6D;
     }
 </style>

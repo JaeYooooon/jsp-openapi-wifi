@@ -29,33 +29,38 @@
                 <th>비고</th>
             </tr>
         </thead>
-        <% for(BookmarkListDTO bookmarkListDTO : bookmarkListDTOList){ %>
+        <% if (bookmarkListDTOList.isEmpty()) { %>
         <tbody>
-            <tr>
-                <td><%=bookmarkListDTO.getID()%></td>
-                <td><%=bookmarkListDTO.getNAME()%></td>
-                <td>
-                    <a href="bookmarkDetail.jsp?wifi=<%=bookmarkListDTO.getWifiNo()%>">
-                        <%=bookmarkListDTO.getWifiName()%>
-                    </a>
-                </td>
-                <td><%=bookmarkListDTO.getCREATETIME()%></td>
-                <td><a href="#" onclick="confirmDelete(<%=bookmarkListDTO.getID()%>);">
-                    삭제
-                </a></td>
-            </tr>
+        <tr>
+            <td colspan="5">북마크 정보가 존재하지 않습니다.</td>
+        </tr>
         </tbody>
-        <%}%>
+        <% } else { %>
+        <% for (BookmarkListDTO bookmarkListDTO : bookmarkListDTOList) { %>
+        <tbody>
+        <tr>
+            <td><%=bookmarkListDTO.getID()%></td>
+            <td><%=bookmarkListDTO.getNAME()%></td>
+            <td>
+                <a href="bookmarkDetail.jsp?wifi=<%=bookmarkListDTO.getWifiNo()%>">
+                    <%=bookmarkListDTO.getWifiName()%>
+                </a>
+            </td>
+            <td><%=bookmarkListDTO.getCREATETIME()%></td>
+            <td><a href="#" onclick="confirmDelete(<%=bookmarkListDTO.getID()%>);">
+                삭제
+            </a></td>
+        </tr>
+        </tbody>
+        <% }} %>
     </table>
 </body>
 </html>
 <script>
     function confirmDelete(id) {
         if (confirm("삭제하시겠습니까?")) {
-            // 사용자가 '예'를 선택한 경우
             window.location.href = "bookmarkListDelete.jsp?id=" + id;
         } else {
-            // 사용자가 '아니오'를 선택한 경우
             return false;
         }
     }

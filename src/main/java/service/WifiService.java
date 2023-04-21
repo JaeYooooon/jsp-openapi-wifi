@@ -19,7 +19,12 @@ public class WifiService {
 
             // db connect
             connection = DriverManager.getConnection(url, userName, password);
-            String sql = "INSERT INTO wifi(X_SWIFI_MGR_NO, X_SWIFI_WRDOFC, X_SWIFI_MAIN_NM, X_SWIFI_ADRES1, X_SWIFI_ADRES2, X_SWIFI_INSTL_FLOOR, X_SWIFI_INSTL_TY, X_SWIFI_INSTL_MBY, X_SWIFI_SVC_SE, X_SWIFI_CMCWR, X_SWIFI_CNSTC_YEAR, X_SWIFI_INOUT_DOOR, X_SWIFI_REMARS3, lat, lnt, WORK_DTTM)" +
+            String sql = "INSERT INTO wifi(X_SWIFI_MGR_NO, " +
+                         "X_SWIFI_WRDOFC, X_SWIFI_MAIN_NM, X_SWIFI_ADRES1, " +
+                         "X_SWIFI_ADRES2, X_SWIFI_INSTL_FLOOR, X_SWIFI_INSTL_TY, " +
+                         "X_SWIFI_INSTL_MBY, X_SWIFI_SVC_SE, X_SWIFI_CMCWR, " +
+                         "X_SWIFI_CNSTC_YEAR, X_SWIFI_INOUT_DOOR, X_SWIFI_REMARS3, " +
+                         "lat, lnt, WORK_DTTM)" +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
             preparedStatement = connection.prepareStatement(sql);
@@ -55,7 +60,7 @@ public class WifiService {
         }
     }
 
-    public List<WifiDTO> showWifi(Double Lat, Double Lnt) throws SQLException {
+    public List<WifiDTO> showWifi(Double Lat, Double Lnt) {
         List<WifiDTO> wifiList = new ArrayList<>();
 
         Connection connection = null;
@@ -89,7 +94,6 @@ public class WifiService {
                 distance = Math.round(distance * 1000.0) / 1000.0;
                 WifiDTO wifiDTO = WifiDTO.builder()
                         .ID(resultSet.getInt("ID"))
-                        .distance(distance)
                         .X_SWIFI_MGR_NO(resultSet.getString("X_SWIFI_MGR_NO"))
                         .X_SWIFI_WRDOFC(resultSet.getString("X_SWIFI_WRDOFC"))
                         .X_SWIFI_MAIN_NM(resultSet.getString("X_SWIFI_MAIN_NM"))
@@ -105,6 +109,7 @@ public class WifiService {
                         .X_SWIFI_REMARS3(resultSet.getString("X_SWIFI_REMARS3"))
                         .LAT(resultSet.getDouble("LAT"))
                         .LNT(resultSet.getDouble("LNT"))
+                        .distance(distance)
                         .WORK_DTTM(resultSet.getTimestamp("WORK_DTTM"))
                         .build();
                 wifiList.add(wifiDTO);
@@ -120,7 +125,6 @@ public class WifiService {
                 e.printStackTrace();
             }
         }
-
         return wifiList;
     }
 
@@ -176,7 +180,6 @@ public class WifiService {
                 throw new RuntimeException(e);
             }
         }
-
     }
 
     public void saveHistory(HitoryDTO hitoryDTO) {
@@ -191,7 +194,7 @@ public class WifiService {
 
             connection = DriverManager.getConnection(url, userName, password);
             String sql = "insert into HISTORY(LAT, LNT, CREATED_TIME) " +
-                    "values (?, ?, ?); ";
+                         "values (?, ?, ?); ";
 
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setDouble(1, hitoryDTO.getLAT());
@@ -279,7 +282,5 @@ public class WifiService {
             }
         }
     }
-
-
 }
 

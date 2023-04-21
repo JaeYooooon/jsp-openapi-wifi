@@ -5,7 +5,6 @@
 <!doctype html>
 <html>
 <head>
-    <title></title>
 </head>
 <body>
 <a style="font-size: 20px; " href="${pageContext.request.contextPath}/views/wifi.jsp">홈</a> |

@@ -1,8 +1,6 @@
 <%@ page import="dto.WifiDTO" %>
-<%@ page import="dto.HitoryDTO" %>
 <%@ page import="service.WifiService" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.sql.Timestamp" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="dto.BookmarkGroupDTO" %>
 <%@ page import="service.BookmarkService" %>
@@ -31,14 +29,12 @@
     String wifiNO = request.getParameter("WifiNo");
     String distance = request.getParameter("distance");
     String wifiname = request.getParameter("wifiname");
-    List<WifiDTO> wifiDTOList = null;
+    List<WifiDTO> wifiDTOList;
     try {
         wifiDTOList = wifiService.showDetail(wifiNO, Double.parseDouble(distance));
     } catch (SQLException e) {
         throw new RuntimeException(e);
     }
-
-
 %>
 <select name="bookmarkList" id="bookmarkList">
     <option value="">북마크 그룹 이름 선택</option>
@@ -47,7 +43,6 @@
     <% } %>
 </select>
 <button onclick="addBookmark()">북마크 추가하기</button>
-
 <script>
     function addBookmark() {
         var selectBox = document.getElementById("bookmarkList");

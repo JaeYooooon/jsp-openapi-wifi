@@ -69,7 +69,7 @@ public class ApiExplorer {
             if (!(JSON.length == 2)) {
                 break;
             }
-            // 불필요 제거
+
             String wJson = JSON[1].substring(2, JSON[1].length() - 2);
 
             JsonArray jsonArray = JsonParser.parseString(wJson).getAsJsonArray();
@@ -97,14 +97,10 @@ public class ApiExplorer {
                         .LNT(object.get("LAT").getAsDouble())
                         .WORK_DTTM(Timestamp.valueOf(object.get("WORK_DTTM").getAsString()))
                         .build();
-                // db inset
                 wifiService.loadWifi(wifiDTO);
             }
             idx += 1000;
-
         }
-
         return cnt;
     }
-
 }
