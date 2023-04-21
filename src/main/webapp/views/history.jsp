@@ -30,7 +30,7 @@
             }
         %>
 <table class="table table-striped table-bordered">
-    <thead style="background: #04AA6D;">
+    <thead>
         <tr>
             <th>ID</th>
             <th>X좌표</th>
@@ -40,6 +40,11 @@
         </tr>
     </thead>
     <tbody>
+        <% if (historyList.isEmpty()) { %>
+        <tr>
+            <td colspan="5">히스토리 정보가 존재하지 않습니다.</td>
+        </tr>
+        <% } else { %>
         <% for (HitoryDTO history : historyList) { %>
         <tr>
             <td><%= history.getID() %></td>
@@ -48,7 +53,7 @@
             <td><%= history.getCREATED_TIME() %></td>
             <td><button onclick="deleteHistory('<%= history.getID() %>')">삭제</button></td>
         </tr>
-        <% } %>
+        <% }} %>
     </tbody>
 </table>
 </body>
@@ -74,5 +79,7 @@
     th{
         text-align: center;
         align-content: center;
+        color: white;
+        background-color: #04AA6D;
     }
 </style>
