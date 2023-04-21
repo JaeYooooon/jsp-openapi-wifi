@@ -14,7 +14,6 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.sql.Timestamp;
 
-// 484f4c554264687934396a4f6b736b
 public class ApiExplorer {
 
     public static Integer loadWifi() throws IOException {
@@ -26,7 +25,7 @@ public class ApiExplorer {
         while (true) {
 
             String urlBuilder = "http://openapi.seoul.go.kr:8088" +
-                    "/" + URLEncoder.encode("484f4c554264687934396a4f6b736b", "UTF-8") +
+                    "/" + URLEncoder.encode("----본인 인증키----", "UTF-8") +
                     "/" + URLEncoder.encode("json", "UTF-8") +
                     "/" + URLEncoder.encode("TbPublicWifiInfo", "UTF-8") +
                     "/" + URLEncoder.encode(String.valueOf(idx), "UTF-8") +
