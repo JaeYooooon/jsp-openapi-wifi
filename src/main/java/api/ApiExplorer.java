@@ -93,8 +93,8 @@ public class ApiExplorer {
                         .X_SWIFI_CNSTC_YEAR(object.get("X_SWIFI_CNSTC_YEAR").getAsString())
                         .X_SWIFI_INOUT_DOOR(object.get("X_SWIFI_INOUT_DOOR").getAsString())
                         .X_SWIFI_REMARS3(object.get("X_SWIFI_REMARS3").getAsString())
-                        .LAT(object.get("LNT").getAsDouble())
-                        .LNT(object.get("LAT").getAsDouble())
+                        .LAT(object.get("LAT").getAsDouble())
+                        .LNT(object.get("LNT").getAsDouble())
                         .WORK_DTTM(Timestamp.valueOf(object.get("WORK_DTTM").getAsString()))
                         .build();
                 wifiService.loadWifi(wifiDTO);
