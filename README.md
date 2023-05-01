@@ -4,6 +4,7 @@
 ## ⚙ Tech Stack
 - Language : Java, JS
 - Build : Gradle 
+- JDK : JDK 1.8
 - Server : Tomcat 8.5, JSP
 - Database : MYSQL
 - Library : Lombok, Okhttp3, Gson
