@@ -3,10 +3,12 @@
 
 ## ⚙ Tech Stack
 - Language : Java, JS
-- Front-End : HTML, CSS, Bootstrap
+- Build : Gradle 
 - Server : Tomcat 8.5, JSP
 - Database : MYSQL
 - Library : Lombok, Okhttp3, Gson
+- Front-End : HTML, CSS, Bootstrap
+
 
 ## 🛠 Function
 **Function** | **구현 완료** | 
