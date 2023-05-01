@@ -15,9 +15,9 @@
 **Function** | **구현 완료** | 
 :------------                                   | :----------------: |  
 **Open API 활용 Json 데이터 파싱**              | :heavy_check_mark: | 
-**Open API 활용 DB에 값 저장**                  | :heavy_check_mark: | 
-**현재 위도, 경도 값 받아오기**                 | :heavy_check_mark: | 
-**위도, 경도를 활용하여 주변 와이파이 검색**    | :heavy_check_mark: |
+**Open API 정보 DB에 값 저장**                  | :heavy_check_mark: | 
+**내 위치 위도, 경도 값 받아오기**                 | :heavy_check_mark: | 
+**위도, 경도 활용 주변 와이파이 검색**    | :heavy_check_mark: |
 **와이파이 정보 자세히 보기**                   | :heavy_check_mark: |  
 **위도 경도 히스토리 저장/삭제/조회**           | :heavy_check_mark: |  
 **북마크 그룹 추가/수정/조회/삭제**             | :heavy_check_mark: |  
