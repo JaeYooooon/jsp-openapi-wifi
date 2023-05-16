@@ -1,5 +1,5 @@
 ## 📍 Wifi Project
-서울시 공공 OpenAPI 를 활용하여주변의 Wifi 정보를 제공하는 웹서비스
+서울시 공공 OpenAPI 를 활용하여 주변의 Wifi 정보를 제공하는 프로젝트
 
 ## ⚙ Tech Stack
 - Language : Java, JS
